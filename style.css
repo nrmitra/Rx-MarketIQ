@@ -1,0 +1,415 @@
+@font-face{
+    font-family: 'Inter';
+    src:
+    local('Inter Regular'), 
+    url('assets/fonts/Inter.ttf');
+    font-weight: 400;
+}
+
+:root{
+    
+    --clr-primary: #FFFF;
+    --clr-secondary: #aeb2ca;
+    /* --clr-secondary: #B2B2B4; */
+    --clr-grey:#D9D9D9;
+    --clr-primary-background:#10131C;
+    --clr-secondary-background: #002060;
+
+    background-color: #10131C;
+
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* margin:0; */
+    padding-block-end: 5rem;
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter.ttf');
+    max-height: 100vh;
+    
+    /* background-color: #10131C; */
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* Bootstrap 5 navbar design code -- STARTS HERE -- */
+
+.logo-image{
+    height: 50px;
+    margin-left: 3%;
+}
+
+.nav-link{
+    color: var(--clr-primary) !important;
+    
+}
+
+.navbar-light .container-fluid .navbar-toggler-icon {
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");  
+}
+.navbar-light .container-fluid .navbar-toggler {
+    border: none;
+}
+
+/* Bootstrap 5 navbar design code -- ENDS HERE -- */
+
+
+/* Hero section design code -- STARTS HERE -- */
+
+.hero-section{
+    height: 75vh;
+    background: linear-gradient(180deg, #000 0%, #59606F 100%);
+
+    color: var(--clr-primary);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* Flexbox property used to split in two broad sections: 
+    (1a) Title + sub-title
+    (1b) Product display screen
+
+    (2) Subscriber logo slider
+    */
+}
+
+.hero-section-grid{ 
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    margin: auto 0;
+
+    /* Hero section: the grid contains the content & product display screen image */
+}
+
+.hero-section-content{
+    text-align: center; /* To ensure the text in the title & sub-title are center aligned*/
+}
+
+.hero-section-content h1{
+    font-size: 2.8rem;
+}
+
+.hero-section-content p{
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.logos{
+    
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap; /* is this needed? */
+    overflow: hidden; /* prevents the horizontal scroll white screen */
+    
+}
+
+.logos-slide{
+    display: flex;
+    flex-grow: 0; /* is this needed? */
+    flex-shrink: 0;
+    gap: 1.5em;
+    animation: 25s slide infinite linear;
+    /* border: 2px solid red; */
+    margin-top: auto; /* Push it and following elements to the bottom */
+    
+}
+
+/* Hero section design code -- ENDS HERE -- */
+
+
+/* Features section design code -- STARTS HERE -- */
+
+.features-section{
+    background-color: var(--clr-primary-background);
+    color: var(--clr-primary)
+}
+.features-section > h1{
+   
+    height: 20vh;
+    padding-top: 3%;
+    font-size: 3.25rem;
+
+    text-align: center;
+    align-content: center; /*vertically aligns the text in the h1 box*/
+}
+
+/* .grey-highlighter{
+    text-decoration: underline;
+    color: var(--clr-secondary);
+} */
+
+.feature-image-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--clr-primary-background);
+    color: var(--clr-primary);
+    
+    /*grid is used to split the containers in two:
+    one grid containing the image and the other containing the description/accordion */
+}
+
+.accordion{
+    width: 75%;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+
+.accordion-item{
+    background: var(--clr-primary-background);
+    color: var(--clr-primary);
+}
+.accordion-body{
+    /* background: linear-gradient(180deg, #D9D9D9 0%, #737373 100%); */
+    background: #737373;
+    color: var(--clr-primary);
+
+}
+.accordion-button::after{
+    filter: invert(1);
+}
+.accordion-button:not(.collapse){
+    color: inherit;
+    background: var(--clr-primary-background);
+}
+
+.accordion .accordion-item {
+    border: none; /* This removes the border around the accordion item */
+  }
+
+.accordion .accordion-header{
+    border-top: 1px solid white;
+ 
+}
+
+.accordion-summary{
+    height: 60vh;
+}
+
+.image-illustration{
+    /* background-color: rgb(217, 217, 217,.65);
+    background: linear-gradient(180deg, #D9D9D9 0%, #737373 100%);
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.3) 0%, rgba(115, 115, 115, 0.3) 100%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* From https://css.glass */
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 2px );
+    border-radius: 15px;
+    
+    margin: auto;
+    padding: 3%;
+
+}
+
+.feature-image-container{
+    margin: 5% auto;
+}
+.feature-description{
+    text-align: center;
+    margin: auto;
+}
+
+.feature-description p {
+    font-size: 1.05rem;
+    color: var(--clr-secondary);
+    width: 85%;
+    margin: auto;
+    
+}
+.feature-description h1{
+    font-size: 3rem;
+}
+.feature-description .corp-to-brand {
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+#image-2,
+#image-3,
+#image-4,
+#image-5{
+    display: none;
+}
+
+.report-feature{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(180deg, #000 0%, #59606F 100%);
+    
+    
+}
+
+.spreadsheet-images{
+    display: grid;
+    grid-template-columns: 45% 55%;
+
+    width: 50%;
+    justify-items: center;
+    margin-top: 5%;
+    /* margin: 3% auto; */
+}
+
+.spreadsheet-description{
+    width: 60%;
+    margin-bottom: 5%;
+    /* margin: 5% auto; */
+}
+
+/* Features section design code -- ENDS HERE -- */
+
+.contact-us{
+    max-height: 50vh;
+    color: var(--clr-primary);
+    text-align: center;
+}
+
+.contact-us > p{
+    font-size: 1.5rem;
+    color: var(--clr-secondary)
+}
+
+.mobile{
+    display: none;
+}
+
+@media (max-width: 650px){
+
+    .hero-section{
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+
+        min-height: 100vh;
+       
+    }
+
+    .hero-section-grid{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .hero-section-content{
+        margin: 10% auto;
+    }
+
+    .hero-section-content h1{
+        font-size: 2rem;
+    }
+
+    #features-section > h1{
+        font-size: 2rem;
+    }
+
+    .feature-image-container{
+        display: flex;
+        flex-direction: column;
+
+        min-height: 60vh;
+    }
+    .feature-description{
+        max-width: 75vw;
+    }
+    #image-1{
+        margin-top: 5%;
+        
+    }
+    #image-5{
+        min-width: 75vw;
+    }
+
+    #image-2{
+        align-items: center;
+        min-height: 30vh;
+        min-width: 65vw;
+    }
+
+    .desktop{
+        display: none;
+       
+    }
+
+    .mobile{
+        display: block;
+    }
+
+    .corp-to-brand{
+       
+        min-width: 80vw;
+        margin: 5% auto;
+       
+    }
+
+    .accordion-summary{
+        min-height: 25vh;
+        margin: 0 auto;
+
+    }
+
+    .image-illustration img{
+        min-width: 85vw;
+    }
+
+    .peer-performance-mobile{
+       margin: 2% auto;
+       
+    }
+    .peer-performance-mobile > h1{
+        margin-bottom: 5%;
+    }
+
+    .micro-level-performance .feature-description p{
+        margin-bottom: 10%;
+    }
+
+    .spreadsheet-images > img{
+        display: none; 
+    }
+
+    .spreadsheet-description > h1{
+        margin-bottom: 10%;
+        font-size: 2.75rem;
+    }
+
+    .contact-us{
+        max-width: 80%;
+        margin: auto;
+        
+    }
+
+
+    footer img{
+        display: none;
+    }
+
+
+
+ 
+
+
+}
