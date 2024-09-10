@@ -299,6 +299,10 @@ img{
 
 @media (max-width: 768px){
 
+    .desktop{
+        display: none;
+    }
+
     .hero-section{
         margin-top: 5%;
         display: flex;
@@ -319,7 +323,15 @@ img{
     }
 
     .hero-section-content h1{
+        margin: auto;
+        max-width: 90%;
         font-size: 2rem;
+    }
+
+    .hero-section-content p{
+        margin: 3% auto;
+        max-width: 85%;
+        /* font-size: 2rem; */
     }
 
     #features-section > h1{
